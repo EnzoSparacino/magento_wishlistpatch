@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Sparacino_WishlistPatch>
+      <version>0.1.0</version>
+    </Sparacino_WishlistPatch>
+  </modules>
+  <global>
+    <helpers>
+      <wishlistpatch>
+        <class>Sparacino_WishlistPatch_Helper</class>
+      </wishlistpatch>
+    </helpers>
+	<models>
+	  <wishlistpatch>
+		<class>Sparacino_WishlistPatch_Model</class>
+		<resourceModel>wishlistpatch_mysql4</resourceModel>
+	  </wishlistpatch>
+	</models>
+    <events>
+	  <customer_login> <!-- identifier of the event we want to catch -->
+        <observers>
+          <customer_login_handler> <!-- identifier of the event handler -->
+            <type>model</type> <!-- class method call type; valid are model, object and singleton -->
+            <class>wishlistpatch/observer</class> <!-- observers class alias -->
+            <method>replaceFormKeyForWishlistAdd</method>  <!-- observer's method to be called -->
+            <args></args> <!-- additional arguments passed to observer -->
+          </customer_login_handler>
+        </observers>
+      </customer_login>
+    </events>
+  </global>
+</config> 
