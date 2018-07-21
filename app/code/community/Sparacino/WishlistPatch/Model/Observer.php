@@ -1,14 +1,4 @@
 <?php
-
-/**
- *
- * @author     Enzo Franco Sparacino <esparacino@gmail.com>
- * 
- */
-
-?>
-
-<?php
 class Sparacino_WishlistPatch_Model_Observer
 {
 
